@@ -11,36 +11,6 @@
       "email": "teste@hot.com",
       "deleted": false,
       "id": 2
-    },
-    {
-      "nome": "terceiro Alterado de novo",
-      "email": "alterado.com",
-      "deleted": false,
-      "id": 3
-    },
-    {
-      "nome": "usuário 3",
-      "email": "teste@hot.com",
-      "deleted": true,
-      "id": 4
-    },
-    {
-      "nome": "usuário 3",
-      "email": "teste@hot.com",
-      "deleted": true,
-      "id": 5
-    },
-    {
-      "nome": "usuário 3",
-      "email": "teste@hot.com",
-      "deleted": false,
-      "id": 6
-    },
-    {
-      "nome": "usuário 3",
-      "email": "teste@hot.com",
-      "deleted": false,
-      "id": 7
     }
   ]
 }

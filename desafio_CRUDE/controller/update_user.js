@@ -7,10 +7,9 @@ module.exports = function put(req, res) {
         const { id } = req.params;
         const new_info = req.body;
 
-        let response = update(user_list, id, new_info);
+        let response = update(user_list, id, new_info, res);
 
         fs.writeFile('./data/user.json', JSON.stringify(data,null,2));
-        if (response == "Usuário não encontrado") res.status(404);
         res.end(response);
 
     }catch (err){
@@ -21,14 +20,23 @@ module.exports = function put(req, res) {
     }
 }
 
-function update(user_list, id, new_info){
+function update(user_list, id, new_info, res){
     let response = 'Usuário não encontrado';
-    user_list.forEach((user) => {
-        if (user.id === parseInt(id)) {
-            user.nome = new_info.nome ?? user.nome;
-            user.email = new_info.email ?? user.email;
-            response = "Usuário atualizado";
+    for (user of user_list){
+        if (user.id === parseInt(id)){
+            if (user.deleted){
+                response = 'Usuário deletado';
+                res.status(202);
+                return response;
+            }else{
+                user.nome = new_info.nome ?? user.nome;
+                user.email = new_info.email ?? user.email;
+                return response = "Usuário atualizado";
+                
+            }
         }
-    });
+    }
+    res.status(404);
+
     return response;
 }

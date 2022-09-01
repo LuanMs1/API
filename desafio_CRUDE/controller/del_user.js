@@ -7,20 +7,23 @@ module.exports = function remove(req, res) {
         //resposta padrão
         let response = "usuário não encontrado";
         const { id } = req.params;
-    
-        user_list.forEach((user) => {
-            if (user.id === parseInt(id)) {
+
+        for (user of user_list){
+            if (user.id === parseInt(id)){
                 if (user.deleted){
                     response = `usuário ${id} já está deletado`
-                    res.status(202);
+                    res.status(202)
                     user_exist = true;
-                }else {
+                    break;
+                }else{
                     user.deleted = true;
                     response = `usuário ${id} deletado`;
+                    res.status(200)
                     user_exist = true;
+                    break;
                 }
             }
-        });
+        }
     
         fs.writeFile('./data/user.json', JSON.stringify(data, null, 2));
         if (!user_exist) res.status(404);

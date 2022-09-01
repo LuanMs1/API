@@ -16,11 +16,11 @@ content-type: application/json
 
 ###
 
-PUT http://localhost:8080/usuarios/3 HTTP/1.1
+PUT http://localhost:8080/usuarios/2 HTTP/1.1
 content-type: application/json
 
 {
-    "nome": "terceiro Alterado de novo",
+    "nome": "terceiro Alterado",
     "email": "alterado.com"
 }
 
@@ -37,7 +37,7 @@ content-type: application/json
  
 ###
 
-DELETE  http://localhost:8080/usuarios/5 HTTP/1.1
+DELETE  http://localhost:8080/usuarios/3 HTTP/1.1
  
 ###
 
