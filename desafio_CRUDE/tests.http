@@ -1,0 +1,44 @@
+GET http://localhost:8080/usuarios HTTP/1.1
+
+###
+
+GET http://localhost:8080/usuarios/3 HTTP/1.1
+
+###
+
+POST http://localhost:8080/usuarios HTTP/1.1
+content-type: application/json
+
+{
+    "nome": "usuário 3",
+    "email": "teste@hot.com"
+}
+
+###
+
+PUT http://localhost:8080/usuarios/3 HTTP/1.1
+content-type: application/json
+
+{
+    "nome": "terceiro Alterado de novo",
+    "email": "alterado.com"
+}
+
+###
+
+PUT http://localhost:8080/usuarios/999 HTTP/1.1
+content-type: application/json
+
+{
+    "nome": "terceiro Alterado",
+    "email": "alterado.com"
+}
+ 
+ 
+###
+
+DELETE  http://localhost:8080/usuarios/5 HTTP/1.1
+ 
+###
+
+DELETE  http://localhost:8080/usuarios/999 HTTP/1.1
