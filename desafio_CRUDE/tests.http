@@ -10,7 +10,7 @@ POST http://localhost:8080/usuarios HTTP/1.1
 content-type: application/json
 
 {
-    "nome": "usuário 3",
+    "nome": "usuário 5",
     "email": "teste@hot.com"
 }
 

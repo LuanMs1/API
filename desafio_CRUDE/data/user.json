@@ -7,10 +7,16 @@
       "id": 1
     },
     {
-      "nome": "usuário 2",
-      "email": "teste@hot.com",
+      "nome": "terceiro Alterado",
+      "email": "alterado.com",
       "deleted": false,
       "id": 2
+    },
+    {
+      "nome": "Segundo Post",
+      "email": "email@email.com",
+      "deleted": true,
+      "id": 3
     }
   ]
 }

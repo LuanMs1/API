@@ -14,9 +14,9 @@ module.exports = function put(req, res) {
 
     }catch (err){
         if (!err.code){
-            res.status(500).end(err.message);
+            res.status(500).send(err.message);
         }
-        res.status(500).end(err.code);
+        res.status(500).send(err.code);
     }
 }
 

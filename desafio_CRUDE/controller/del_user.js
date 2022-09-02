@@ -27,11 +27,11 @@ module.exports = function remove(req, res) {
     
         fs.writeFile('./data/user.json', JSON.stringify(data, null, 2));
         if (!user_exist) res.status(404);
-        res.end(response);
+        res.send(response);
     }catch(err){
         if (!err.code){
-            res.status(500).end(err.message);
+            res.status(500).send(err.message);
         }
-        res.status(500).end(err.code);
+        res.status(500).send(err.code);
     }
 }

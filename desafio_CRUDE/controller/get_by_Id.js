@@ -10,14 +10,14 @@ module.exports = function get(req, res) {
         }
         
         if (valid_users.length === 0){
-            res.status(202).end("Usuário não encontrado");
+            res.status(202).send("Usuário não encontrado");
         }else {
             res.status(200).json(valid_users);
         }
     }catch(err){
         if (!err.code){
-            res.status(500).end(err.message);
+            res.status(500).send(err.message);
         }
-        res.status(500).end(err.code);
+        res.status(500).send(err.code);
     }
 }

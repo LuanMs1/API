@@ -1,39 +1,30 @@
-module.exports = function create(req, res) {
+module.exports = async function create(req, res) {
     try{
         //pega req.body
         //passa body para services
         //services busca banco de dados e atualiza
         //retorna a resposta
-
-        const data = require('../data/user.json');
-        const fs = require('fs').promises;
-        const new_user_info = req.body;
-
+        const createService = require('../Services/createUserService');
+        const new_user_info = req.body;        
+        // checando se tem 2 itens nome e email
         if (Object.keys(new_user_info).length !== 2) {
             res.status(400).end("fornecer nome e email");
             return;
         }
 
-        const new_user = buildUserObject(new_user_info, data);
-        data.users.push(new_user);
-    
-        fs.writeFile("./data/user.json", JSON.stringify(data, null, 2))
-    
-        res.status(201).json("Usuário cadastrado com sucesso");
-        
+        //retorna verdadeiro caso usuário seja criado
+        const sucess = await createService(new_user_info);
+
+        if (sucess){
+            res.status(201).send("Usuário cadastrado com sucesso");
+        }else{
+            res.status(500).send("algum erro");
+        }
+
     }catch(err){
         if (!err.code){
-            res.status(500).end(err.message);
+            res.status(500).send(err.message);
         }
-        res.status(500).end(err.code);
+        res.status(500).send(err.code);s
     }
-}
-
-function buildUserObject(info, data){
-    const user_list = data.users;
-    const new_user_id = user_list.length + 1;
-    const new_user = {...info}
-    new_user.deleted = false;
-    new_user.id = new_user_id;
-    return new_user;
 }
