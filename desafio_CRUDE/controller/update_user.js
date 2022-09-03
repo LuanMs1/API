@@ -10,7 +10,7 @@ module.exports = function put(req, res) {
         let response = update(user_list, id, new_info, res);
 
         fs.writeFile('./data/user.json', JSON.stringify(data,null,2));
-        res.end(response);
+        res.send(response);
 
     }catch (err){
         if (!err.code){
@@ -36,7 +36,7 @@ function update(user_list, id, new_info, res){
             }
         }
     }
-    res.status(404);
+    res.status(404);        
 
     return response;
 }

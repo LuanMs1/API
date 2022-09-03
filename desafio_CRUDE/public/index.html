@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,9 +11,26 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <title>CRUD API</title>
 </head>
+
 <body>
+    <div class = 'modal'>
+        <span class="material-symbols-outlined close">
+            close
+            </span>
+        <h3>Informações para editar</h3>
+        <input type="text" name="name" id="name" 
+        placeholder="NOME COMPLETO" required>
+
+        <input type="text" name="email" id="email" 
+        placeholder="EMAIL" required>
+        
+        <button type="button" class="submit_edit"> Editar </button>
+    </div>
     <header>
         <h1>FRONT API</h1>
     </header>
@@ -28,16 +46,13 @@
             </div>
             <div class="field_place">
 
-                <div class="field">
-                    <input type="text" name="name" id="name" 
-                    placeholder="NOME COMPLETO">                
-                </div>
-                <div class="field">
-                    <input type="text" name="email" id="email" placeholder="EMAIL">         
-                </div>
-                <div class="field">
-                    <button type="button"> CADASTRAR </button>
-                </div>
+                <input type="text" name="name" id="name" 
+                placeholder="NOME COMPLETO" required>
+
+                <input type="text" name="email" id="email" 
+                placeholder="EMAIL" required>
+
+                <button type="button" class="sign_in"> CADASTRAR </button>
 
             </div>
             </form>

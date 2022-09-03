@@ -10,6 +10,32 @@
     --back-color: #f8f8f8;
 }
 
+.table_icon{
+    width: 100%;
+}
+.modal{
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    position: fixed;
+    background-color: white;
+    border: black solid 1px;
+    width: 400px;
+    height: fit-content;
+    padding: 20px;
+    right: 10px;
+    bottom: 20px;
+    animation-name: slideLeft;
+    animation-duration: 0.5s;
+    box-shadow: 0 0 10px black;
+}
+.modal input, .modal button{
+    width: 90%;
+}
+.close{
+    position: absolute;
+    right: inherit;
+}
 body{
     display: flex;
     flex-direction: column;
@@ -58,8 +84,8 @@ main{
 
 input{
     padding:7px;
-    border:var(--main-color) 1px solid;
     border-radius: 5px;
+    border:var(--main-color) 1px solid;
     width: 33vw;
     height: 3em;
     background-color: var(--back-color);
@@ -82,4 +108,9 @@ table{
 th, td, tr{
     border: 1px solid black;
     padding: 5px;
+}
+
+@keyframes slideLeft{
+    from{right: -300px;}
+    to{right: 10px;}
 }
