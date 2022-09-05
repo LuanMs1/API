@@ -2,14 +2,10 @@ module.exports = async function get(req, res) {
     try{
         const fs = require('fs').promises;
         let user_list = await fs.readFile('./data/user.json', 'utf-8');
-        user_list = JSON.parse(user_list).users;
         console.log(user_list);
-        const valid_users = [];
-        for (user of user_list){
-            if(!user.deleted){
-                valid_users.push(user);
-            }
-        }
+        user_list = JSON.parse(user_list).users;
+        const valid_users = user_list
+                            .filter((element) => element.deleted === false );
         res.json(valid_users);
     }catch(err){
         console.log(err);

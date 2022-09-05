@@ -12,5 +12,5 @@ module.exports = (app) => {
             .delete(controllers.del_user);
     }catch(err){
         console.log(err);
-    }
+    };
 }

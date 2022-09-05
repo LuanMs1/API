@@ -1,6 +1,7 @@
-module.exports = function get(req, res) {
+module.exports = async function get(req, res) {
     try{
-        const user_list = require('../data/user.json').users;
+        let user_list = await fs.readFile('./data/user.json', 'utf-8');
+        console.log(user_list);
         const valid_users = [];
         const { id } = req.params;
         for (user of user_list){

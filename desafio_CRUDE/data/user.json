@@ -1,8 +1,8 @@
 {
   "users": [
     {
-      "nome": "humbora que vamo",
-      "email": "teste@hot.com",
+      "nome": "aaaa",
+      "email": "aa",
       "deleted": false,
       "id": 1
     },
@@ -13,16 +13,34 @@
       "id": 2
     },
     {
-      "nome": "Segundo Post",
-      "email": "email@email.com",
-      "deleted": false,
+      "nome": "hhhhh",
+      "email": "foi@",
+      "deleted": true,
       "id": 3
     },
     {
-      "nome": "usuário 3",
-      "email": "teste@hot.com",
+      "nome": "again",
+      "email": "alterado.com",
       "deleted": false,
       "id": 4
+    },
+    {
+      "nome": "aaa",
+      "email": "sss",
+      "deleted": false,
+      "id": 5
+    },
+    {
+      "nome": "postman 2",
+      "email": "post@gmail.com",
+      "deleted": false,
+      "id": 6
+    },
+    {
+      "nome": "postman 4",
+      "email": "post@gmail.com",
+      "deleted": false,
+      "id": 7
     }
   ]
 }

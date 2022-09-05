@@ -10,9 +10,6 @@
     --back-color: #f8f8f8;
 }
 
-.table_icon{
-    width: 100%;
-}
 .modal{
     display: none;
     flex-direction: column;
@@ -40,8 +37,13 @@ body{
     display: flex;
     flex-direction: column;
     gap:20px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto';
+    font-style: normal;
 
+}
+.error{
+    color: red;
+    font-size: 14px;
 }
 
 header{
@@ -100,15 +102,43 @@ button{
     border-radius: 5px;
 }
 
-table{
-    border: 1px solid black;
-    width: 80vw;
+.table_place{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-th, td, tr{
+table{
+    /* border: 1px solid black; */
+    width: 80vw;
+}
+.table_icon{
+    width: 100%;
+}
+th {
+    background-color: var(--main-color);
+    color: white;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+tr, th{
+    height: 50px;
+    text-align: center;
+}
+
+tr:nth-child(even){
+    background-color: var(--sec-color);
+}
+tr:nth-child(odd){
+    background-color: var(--back-color);
+}
+/* td, tr{
     border: 1px solid black;
     padding: 5px;
-}
+} */
 
 @keyframes slideLeft{
     from{right: -300px;}

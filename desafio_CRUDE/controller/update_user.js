@@ -3,7 +3,7 @@ module.exports = function put(req, res) {
         const data = require('../data/user.json');
         const fs = require('fs').promises;
         const user_list = data.users;
-
+        console.log(data);
         const { id } = req.params;
         const new_info = req.body;
 

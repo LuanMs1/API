@@ -5,7 +5,7 @@ module.exports = async function create(req, res) {
         //services busca banco de dados e atualiza
         //retorna a resposta
         const createService = require('../Services/createUserService');
-        const new_user_info = req.body;        
+        const new_user_info = req.body;
         // checando se tem 2 itens nome e email
         if (Object.keys(new_user_info).length !== 2) {
             res.status(400).end("fornecer nome e email");
